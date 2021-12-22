@@ -68,6 +68,9 @@
     <Filter Include="Libraries\nifly\src">
       <UniqueIdentifier>{d95f2d14-c32c-42eb-8742-c174b699d5fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XMH">
+      <UniqueIdentifier>{32c38a98-1c83-45a1-8661-896ee1895232}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="OutfitStudio.ico">
@@ -1750,6 +1753,9 @@
     <ClInclude Include="src\ui\wxBrushSettingsPopup.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="OutfitStDll.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\TinyXML-2\tinyxml2.cpp">
@@ -1952,6 +1958,9 @@
     </ClCompile>
     <ClCompile Include="src\ui\wxBrushSettingsPopup.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="OutfitStDll.cpp">
+      <Filter>XMH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

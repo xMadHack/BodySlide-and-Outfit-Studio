@@ -23,6 +23,7 @@
     <RootNamespace>BodySlide</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -47,9 +48,10 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -120,11 +122,11 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\wxWidgets\include\msvc;..\wxWidgets\include;lib\gli;lib\nifly\include;lib\nifly\external</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN64;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;WIN32;_USRDLL;DLL_EXPORTS;_CRT_SECURE_NO_DEPRECATE=1;_CRT_NON_CONFORMING_SWPRINTFS=1;_SCL_SECURE_NO_WARNINGS=1;__WXMSW__;_UNICODE;MY_DLL_BUILDING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -138,6 +140,9 @@
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <UACExecutionLevel>AsInvoker</UACExecutionLevel>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)build\Debug\x64\*.dll" "$(SolutionDir)BSOStudioNetGUI"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -398,6 +403,9 @@
     <None Include="res\xrc\Slider.xrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BSDllController.h" />
+    <ClInclude Include="BSFrameMethods.h" />
+    <ClInclude Include="BodySlideDll.h" />
     <ClInclude Include="lib\DDS.h" />
     <ClInclude Include="lib\FSEngine\FSBSA.h" />
     <ClInclude Include="lib\FSEngine\FSEngine.h" />
@@ -760,6 +768,8 @@
     <ClInclude Include="src\utils\StringStuff.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BSDllController.cpp" />
+    <ClCompile Include="BSFrameMethods.cpp" />
     <ClCompile Include="lib\FSEngine\FSBSA.cpp" />
     <ClCompile Include="lib\FSEngine\FSEngine.cpp" />
     <ClCompile Include="lib\FSEngine\FSManager.cpp" />
@@ -787,6 +797,7 @@
     <ClCompile Include="lib\SOIL2\image_helper.c" />
     <ClCompile Include="lib\SOIL2\SOIL2.c" />
     <ClCompile Include="lib\TinyXML-2\tinyxml2.cpp" />
+    <ClCompile Include="BodySlideDll.cpp" />
     <ClCompile Include="src\components\Anim.cpp" />
     <ClCompile Include="src\components\Automorph.cpp" />
     <ClCompile Include="src\components\BuildSelection.cpp" />

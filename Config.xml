@@ -1,6 +1,6 @@
-<Config>
+﻿<Config>
     <!-- 0 = FO3, 1 = FONV, 2 = SKYRIM, 3 = FO4, 4 = SKYRIMSE, 5 = FO4VR, 6 = SKYRIMVR -->
-    <TargetGame>-1</TargetGame>
+    <TargetGame>4</TargetGame>
     <WarnMissingGamePath>true</WarnMissingGamePath>
     <BSATextureScan>true</BSATextureScan>
     <!-- Archives black list -->
@@ -17,10 +17,10 @@
         <FalloutNewVegas></FalloutNewVegas>
         <Skyrim></Skyrim>
         <Fallout4></Fallout4>
-        <SkyrimSpecialEdition></SkyrimSpecialEdition>
+        <SkyrimSpecialEdition>C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition\Data\</SkyrimSpecialEdition>
         <Fallout4VR></Fallout4VR>
         <SkyrimVR></SkyrimVR></GameDataPaths>
-    <GameDataPath></GameDataPath>
+    <GameDataPath>C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition\Data\</GameDataPath>
     <OutputDataPath></OutputDataPath>
     <ProjectPath></ProjectPath>
     <GameRegKey></GameRegKey>
@@ -51,6 +51,6 @@
         <ColorBackground r="210" g="210" b="210"></ColorBackground></Rendering>
     <!-- Animation data. The default skeleton reference is used by Outfit Studio to determine the positions and skinning transforms for all vertices of an outfit -->
     <Anim>
-        <DefaultSkeletonReference></DefaultSkeletonReference>
-        <SkeletonRootName></SkeletonRootName></Anim>
+        <DefaultSkeletonReference>res/skeleton_female_sse.nif</DefaultSkeletonReference>
+        <SkeletonRootName>NPC Root [Root]</SkeletonRootName></Anim>
 </Config>

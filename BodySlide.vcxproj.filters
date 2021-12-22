@@ -68,6 +68,9 @@
     <Filter Include="Libraries\nifly\src">
       <UniqueIdentifier>{a4a64824-9052-40c3-9138-04fab014641c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XMH">
+      <UniqueIdentifier>{e0b76cc1-1ff2-49f1-a9f1-ea995c3c5104}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="BodySlide.ico">
@@ -1726,6 +1729,15 @@
     <ClInclude Include="src\components\UndoState.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="BodySlideDll.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="BSFrameMethods.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="BSDllController.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\TinyXML-2\tinyxml2.cpp">
@@ -1910,6 +1922,15 @@
     </ClCompile>
     <ClCompile Include="lib\nifly\src\Skin.cpp">
       <Filter>Libraries\nifly\src</Filter>
+    </ClCompile>
+    <ClCompile Include="BodySlideDll.cpp">
+      <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="BSFrameMethods.cpp">
+      <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="BSDllController.cpp">
+      <Filter>XMH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

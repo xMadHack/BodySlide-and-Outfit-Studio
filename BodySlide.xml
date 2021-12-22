@@ -1,7 +1,10 @@
-<BodySlideConfig>
+﻿<BodySlideConfig>
     <SelectedOutfit></SelectedOutfit>
     <SelectedPreset></SelectedPreset>
     <LastGroupFilter></LastGroupFilter>
     <LastOutfitFilter></LastOutfitFilter>
     <BuildMorphs>false</BuildMorphs>
+    <BodySlideFrame width="800" height="600" maximized="false" x="363" y="342"></BodySlideFrame>
+    <PreviewFrame></PreviewFrame>
+    <ForceBodyNormals>false</ForceBodyNormals>
 </BodySlideConfig>

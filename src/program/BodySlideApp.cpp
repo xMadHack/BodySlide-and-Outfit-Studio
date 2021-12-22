@@ -20,9 +20,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/PlatformUtil.h"
 #include "../utils/StringStuff.h"
 
+#include "../../BodySlideDll.h"
+#include "../../BSDllCOntroller.h"
+
 #include <wx/debugrpt.h>
 #include <regex>
 #include <atomic>
+#include <iostream>
 
 #ifdef WIN64
 	#include <ppl.h>
@@ -31,6 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #else
 	#undef _PPL_H
 #endif
+
 
 using namespace nifly;
 
@@ -87,9 +92,20 @@ wxBEGIN_EVENT_TABLE(BodySlideFrame, wxFrame)
 	EVT_SIZE(BodySlideFrame::OnSetSize)
 wxEND_EVENT_TABLE()
 
-wxIMPLEMENT_APP(BodySlideApp);
+void somethingThatWillBeIgnored() {
+	// The macro above screws the intellisence somehow, and it makes it not detect the
+	//  following function (ie, this one).
+	// I added this extra function so that the other important ones can be detected correctly.
+}
 
-BodySlideApp::~BodySlideApp() {
+BodySlideApp::BodySlideApp()
+{
+	BSDllController::body_slide_app_instance = this;
+	SetExitOnFrameDelete(true);
+}
+
+BodySlideApp::~BodySlideApp()
+{
 	delete previewBaseNif;
 	previewBaseNif = nullptr;
 
@@ -99,7 +115,13 @@ BodySlideApp::~BodySlideApp() {
 	FSManager::del();
 }
 
+int BodySlideApp::OnExit() {
+	bodyslide_closed();
+	return wxApp::OnExit();
+}
+
 bool BodySlideApp::OnInit() {
+
 	if (!wxApp::OnInit())
 		return false;
 
@@ -730,6 +752,8 @@ void BodySlideApp::EditProject(const std::string& projectName) {
 }
 
 void BodySlideApp::LaunchOutfitStudio(const wxString& args) {
+	BSDllController::raise_event(BSMethods::OPEN_OUTFIT_STUDIO);
+	return;
 #ifdef WIN64
 	const wxString osExec = "OutfitStudio x64.exe";
 #else
@@ -2556,6 +2580,7 @@ int BodySlideApp::SaveSliderPositions(const std::string& outputFile, const std::
 BodySlideFrame::BodySlideFrame(BodySlideApp* a, const wxSize &size) : delayLoad(this, DELAYLOAD_TIMER) {
 	app = a;
 	rowCount = 0;
+	BSDllController::body_slide_frame_instance = this;
 
 	wxXmlResource* xrc = wxXmlResource::Get();
 	bool loaded = xrc->Load(wxString::FromUTF8(Config["AppDir"]) + "/res/xrc/BodySlide.xrc");

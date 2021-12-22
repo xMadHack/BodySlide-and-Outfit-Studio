@@ -101,15 +101,19 @@ class BodySlideApp : public wxApp {
 	int CreateSetSliders(const std::string& outfit);
 
 public:
+
+	BodySlideApp();
 	virtual ~BodySlideApp();
+
 	virtual bool OnInit();
+	virtual int OnExit();
 	virtual void OnInitCmdLine(wxCmdLineParser& parser);
 	virtual bool OnCmdLineParsed(wxCmdLineParser& parser);
 
 	virtual bool OnExceptionInMainLoop();
 	virtual void OnUnhandledException();
 	virtual void OnFatalException();
-	
+
 	SliderCategoryCollection cCollection;
 	TargetGame targetGame;
 
@@ -226,6 +230,7 @@ public:
 
 	int UpdateSliderPositions(const std::string& presetName);
 	int SaveSliderPositions(const std::string& outputFile, const std::string& presetName, std::vector<std::string>& groups);
+
 };
 
 static const wxCmdLineEntryDesc g_cmdLineDesc[] = {
@@ -242,6 +247,7 @@ static const wxCmdLineEntryDesc g_cmdLineDesc[] = {
 
 class BodySlideFrame : public wxFrame {
 public:
+
 	class SliderDisplay {
 	public:
 		bool isZap = false;

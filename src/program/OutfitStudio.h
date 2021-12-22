@@ -858,9 +858,11 @@ std::string GetProjectPath();
 
 class OutfitStudio : public wxApp {
 public:
+	OutfitStudio();
 	virtual ~OutfitStudio();
 
 	virtual bool OnInit();
+	virtual int OnExit();
 	virtual void OnInitCmdLine(wxCmdLineParser& parser);
 	virtual bool OnCmdLineParsed(wxCmdLineParser& parser);
 

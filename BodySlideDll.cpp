@@ -177,6 +177,45 @@ extern "C"
 		return (gs_wxMainThread != NULL);
 	}
 
+	void bs_free(void* p)
+	{
+		free(p);
+	}
+
+	void bs_read_int_property(BodySlideProperties property, int* res)
+	{
+		*res = 123;
+	}
+
+	void bs_read_int_array_property(BodySlideProperties property, int** data, int* arrayLength)
+	{
+
+		std::vector<int> id_x_y_z = { 1, 2, 3 };
+
+		*arrayLength = id_x_y_z.size();
+		auto size = (*arrayLength) * sizeof(int);
+
+		*data = static_cast<int*>(malloc(size)); //remember to free this using bs_free(...)
+		memcpy(*data, id_x_y_z.data(), size);
+	}
+
+	void bs_read_string_property(BodySlideProperties property, LPCTSTR* res)
+	{
+
+		*res = L"hello my friend!!";
+	}
+
+	void bs_read_string_array_property(BodySlideProperties property, LPCTSTR** data, int* arrayLength)
+	{
+
+		std::vector<LPCTSTR> id_x_y_z = { L"HEELLOO", L"HEELLOO", L"FRIEND" };
+
+		*arrayLength = id_x_y_z.size();
+		auto size = (*arrayLength) * sizeof(LPCTSTR);
+
+		*data = static_cast<LPCTSTR*>(malloc(size)); //remember to free this using bs_free(...)
+		memcpy(*data, id_x_y_z.data(), size);
+	}
 
 } // extern "C"
 

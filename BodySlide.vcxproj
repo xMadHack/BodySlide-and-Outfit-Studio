@@ -404,8 +404,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSDllController.h" />
-    <ClInclude Include="BSFrameMethods.h" />
     <ClInclude Include="BodySlideDll.h" />
+    <ClInclude Include="BodySlideProperties.h" />
     <ClInclude Include="lib\DDS.h" />
     <ClInclude Include="lib\FSEngine\FSBSA.h" />
     <ClInclude Include="lib\FSEngine\FSEngine.h" />
@@ -769,7 +769,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BSDllController.cpp" />
-    <ClCompile Include="BSFrameMethods.cpp" />
     <ClCompile Include="lib\FSEngine\FSBSA.cpp" />
     <ClCompile Include="lib\FSEngine\FSEngine.cpp" />
     <ClCompile Include="lib\FSEngine\FSManager.cpp" />

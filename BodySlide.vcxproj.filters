@@ -1732,10 +1732,10 @@
     <ClInclude Include="BodySlideDll.h">
       <Filter>XMH</Filter>
     </ClInclude>
-    <ClInclude Include="BSFrameMethods.h">
+    <ClInclude Include="BSDllController.h">
       <Filter>XMH</Filter>
     </ClInclude>
-    <ClInclude Include="BSDllController.h">
+    <ClInclude Include="BodySlideProperties.h">
       <Filter>XMH</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1924,9 +1924,6 @@
       <Filter>Libraries\nifly\src</Filter>
     </ClCompile>
     <ClCompile Include="BodySlideDll.cpp">
-      <Filter>XMH</Filter>
-    </ClCompile>
-    <ClCompile Include="BSFrameMethods.cpp">
       <Filter>XMH</Filter>
     </ClCompile>
     <ClCompile Include="BSDllController.cpp">

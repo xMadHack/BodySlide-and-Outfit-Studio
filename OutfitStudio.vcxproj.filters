@@ -1756,6 +1756,9 @@
     <ClInclude Include="OutfitStDll.h">
       <Filter>XMH</Filter>
     </ClInclude>
+    <ClInclude Include="OSDllController.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\TinyXML-2\tinyxml2.cpp">
@@ -1960,6 +1963,9 @@
       <Filter>UI</Filter>
     </ClCompile>
     <ClCompile Include="OutfitStDll.cpp">
+      <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="OSDllController.cpp">
       <Filter>XMH</Filter>
     </ClCompile>
   </ItemGroup>

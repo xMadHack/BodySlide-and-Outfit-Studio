@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BodySlideDll.h"
+#include "BodySlideProperties.h"
 
 class BodySlideApp;
 class BodySlideFrame;
@@ -12,4 +13,5 @@ public:
     static callback_action bs_event_handler;
     static void set_event_handler(callback_action act);
     static void raise_event(BSMethods method);
+    static void read_int(BSMethods method);
 };

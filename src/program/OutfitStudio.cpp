@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/PlatformUtil.h"
 
 #include "../../OutfitStDll.h"
+#include "../../OSDllController.h"
 
 #include <wx/debugrpt.h>
 #include <wx/wfstream.h>
@@ -463,6 +464,7 @@ bool OutfitStudio::OnInit() {
 	Bind(wxEVT_CHAR_HOOK, &OutfitStudio::CharHook, this);
 
 	wxLogMessage("Outfit Studio initialized.");
+	OSDllController::raise_event(OSMethods::OUTFIT_STUDIO_OPENED);
 	return true;
 }
 

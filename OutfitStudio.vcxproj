@@ -728,6 +728,7 @@
     <ClInclude Include="lib\SOIL2\stb_image.h" />
     <ClInclude Include="lib\SOIL2\stb_image_write.h" />
     <ClInclude Include="lib\TinyXML-2\tinyxml2.h" />
+    <ClInclude Include="OSDllController.h" />
     <ClInclude Include="OutfitStDll.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\components\Anim.h" />
@@ -801,6 +802,7 @@
     <ClCompile Include="lib\SOIL2\image_helper.c" />
     <ClCompile Include="lib\SOIL2\SOIL2.c" />
     <ClCompile Include="lib\TinyXML-2\tinyxml2.cpp" />
+    <ClCompile Include="OSDllController.cpp" />
     <ClCompile Include="OutfitStDll.cpp" />
     <ClCompile Include="src\components\Anim.cpp" />
     <ClCompile Include="src\components\Automorph.cpp" />

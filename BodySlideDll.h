@@ -1,6 +1,8 @@
 #pragma once
 
-
+#include <string>
+#include <vector>
+#include <Windows.h>
 
 enum class BSMethods {
     NONE=0, OPEN_SETTINGS=1, OPEN_OUTFIT_STUDIO=2
@@ -9,6 +11,11 @@ enum class BSMethods {
 
 typedef void(__stdcall* callback_action)(BSMethods);
 
+enum class BodySlideProperties;
+
+//typedef void(__stdcall* read_int_property_function)(int);
+//typedef void(__stdcall* read_string_property_function)(LPCTSTR str);
+//typedef void(__stdcall* read_string_array_property_function)(std::vector<std::string>);
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,8 +38,18 @@ extern "C" {
     //MY_DLL_DECL int TakesCallback(ANSWERCB fp, int n, int m);
     MY_DLL_DECL void set_body_slide_event_handler(callback_action act);
 
-    MY_DLL_DECL void ClickSettings();
-
+    MY_DLL_DECL void bs_free(void* p);
+    MY_DLL_DECL void bs_read_int_property(BodySlideProperties property, int * res);
+    MY_DLL_DECL void bs_read_int_array_property(BodySlideProperties property, int**data, int * arrayLenght);
+    MY_DLL_DECL void  bs_read_string_property(BodySlideProperties property, LPCTSTR*res);
+    MY_DLL_DECL void  bs_read_string_array_property(BodySlideProperties property, LPCTSTR**data, int * arrayLength);
+    /*MY_DLL_DECL LPCTSTR  bs_read_string_array_property_at(BodySlideProperties property, int index);
+    MY_DLL_DECL double  bs_read_double_property(BodySlideProperties property);
+    MY_DLL_DECL int  bs_read_double_array_property_length(BodySlideProperties property);
+    MY_DLL_DECL double  bs_read_double_array_property_at(BodySlideProperties property, int index);
+    MY_DLL_DECL bool bs_read_bool_property(BodySlideProperties property);
+    MY_DLL_DECL int bs_read_bool_array_property_length(BodySlideProperties property);
+    MY_DLL_DECL bool bs_read_bool_array_property_at(BodySlideProperties property, int index);*/
 
 #ifdef __cplusplus
 }

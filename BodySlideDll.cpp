@@ -19,7 +19,7 @@
 
 
 
-
+using namespace xmadhack_c;
 
 // ----------------------------------------------------------------------------
 // application startup
@@ -182,12 +182,18 @@ extern "C"
 		free(p);
 	}
 
-	void bs_read_int_property(BodySlideProperties property, int* res)
+	void bs_delete_string(LPCTSTR p)
 	{
-		*res = 123;
+		delete[] p;
 	}
 
-	void bs_read_int_array_property(BodySlideProperties property, int** data, int* arrayLength)
+	void bs_read_int_property(CBodySlideProperties property, int* res)
+	{
+
+		*res = BSDllController::read_int(property);
+	}
+
+	void bs_read_int_array_property(CBodySlideProperties property, int** data, int* arrayLength)
 	{
 
 		std::vector<int> id_x_y_z = { 1, 2, 3 };
@@ -199,22 +205,47 @@ extern "C"
 		memcpy(*data, id_x_y_z.data(), size);
 	}
 
-	void bs_read_string_property(BodySlideProperties property, LPCTSTR* res)
+	LPCTSTR ConvertToNewLPCTSTR(const std::string& s)
 	{
-
-		*res = L"hello my friend!!";
+		wchar_t* ws = new wchar_t[s.size() + 1]; // +1 for zero at the end
+		copy(s.begin(), s.end(), ws);
+		ws[s.size()] = 0; // zero at the end
+		return ws;
 	}
 
-	void bs_read_string_array_property(BodySlideProperties property, LPCTSTR** data, int* arrayLength)
+	void bs_read_string_property(CBodySlideProperties property, LPCTSTR* res)
 	{
 
-		std::vector<LPCTSTR> id_x_y_z = { L"HEELLOO", L"HEELLOO", L"FRIEND" };
+		auto stdstr = BSDllController::read_string(property);
 
-		*arrayLength = id_x_y_z.size();
-		auto size = (*arrayLength) * sizeof(LPCTSTR);
+		*res = ConvertToNewLPCTSTR(stdstr);
+	}
 
-		*data = static_cast<LPCTSTR*>(malloc(size)); //remember to free this using bs_free(...)
-		memcpy(*data, id_x_y_z.data(), size);
+	LPCTSTR* ConvertToNewLPCTSTRArray(const std::vector<std::string>& arr)
+	{
+		wchar_t** wa = new wchar_t* [arr.size()];
+		for (int i = 0; i < arr.size(); i++) {
+			wa[i] = (wchar_t*)ConvertToNewLPCTSTR(arr[i]);
+		}
+		return (LPCTSTR *)wa;
+	}
+
+	void bs_read_string_array_property(CBodySlideProperties property, LPCTSTR** data, int* arrayLength)
+	{
+		auto str_arr = BSDllController::read_string_array(property);
+		*arrayLength = str_arr.size();
+		*data = ConvertToNewLPCTSTRArray(str_arr);
+		//std::vector<LPCTSTR> out_array
+
+		//std::vector<LPCTSTR> new_array;
+		//for (const auto& value : str_arr) {
+		//	new_array.push_back((LPCTSTR)(value.c_str()));
+		//}
+		//*arrayLength = new_array.size();
+		//auto size = (*arrayLength) * sizeof(LPCTSTR);
+
+		//*data = static_cast<LPCTSTR*>(malloc(size)); //remember to free this using bs_free(...) after using it
+		//memcpy(*data, new_array.data(), size);
 	}
 
 } // extern "C"

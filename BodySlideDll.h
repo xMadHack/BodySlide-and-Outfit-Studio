@@ -10,8 +10,9 @@ enum class BSMethods {
 };
 
 typedef void(__stdcall* callback_action)(BSMethods);
-
-enum class BodySlideProperties;
+namespace xmadhack_c {
+    enum class CBodySlideProperties;
+}
 
 //typedef void(__stdcall* read_int_property_function)(int);
 //typedef void(__stdcall* read_string_property_function)(LPCTSTR str);
@@ -39,10 +40,12 @@ extern "C" {
     MY_DLL_DECL void set_body_slide_event_handler(callback_action act);
 
     MY_DLL_DECL void bs_free(void* p);
-    MY_DLL_DECL void bs_read_int_property(BodySlideProperties property, int * res);
-    MY_DLL_DECL void bs_read_int_array_property(BodySlideProperties property, int**data, int * arrayLenght);
-    MY_DLL_DECL void  bs_read_string_property(BodySlideProperties property, LPCTSTR*res);
-    MY_DLL_DECL void  bs_read_string_array_property(BodySlideProperties property, LPCTSTR**data, int * arrayLength);
+    MY_DLL_DECL void bs_delete_string(LPCTSTR p);
+
+    MY_DLL_DECL void bs_read_int_property(xmadhack_c::CBodySlideProperties property, int * res);
+    MY_DLL_DECL void bs_read_int_array_property(xmadhack_c::CBodySlideProperties property, int**data, int * arrayLenght);
+    MY_DLL_DECL void  bs_read_string_property(xmadhack_c::CBodySlideProperties property, LPCTSTR*res);
+    MY_DLL_DECL void  bs_read_string_array_property(xmadhack_c::CBodySlideProperties property, LPCTSTR**data, int * arrayLength);
     /*MY_DLL_DECL LPCTSTR  bs_read_string_array_property_at(BodySlideProperties property, int index);
     MY_DLL_DECL double  bs_read_double_property(BodySlideProperties property);
     MY_DLL_DECL int  bs_read_double_array_property_length(BodySlideProperties property);

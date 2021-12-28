@@ -71,6 +71,9 @@
     <Filter Include="XMH">
       <UniqueIdentifier>{e0b76cc1-1ff2-49f1-a9f1-ea995c3c5104}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XMH\Interop">
+      <UniqueIdentifier>{882129c2-55b3-4a19-a5e5-be07639bcf11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="BodySlide.ico">
@@ -1729,14 +1732,23 @@
     <ClInclude Include="src\components\UndoState.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="BodySlideDll.h">
-      <Filter>XMH</Filter>
-    </ClInclude>
     <ClInclude Include="BSDllController.h">
       <Filter>XMH</Filter>
     </ClInclude>
-    <ClInclude Include="BodySlideProperties.h">
+    <ClInclude Include="CBodySlideProperties.h">
       <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPropertiesReader.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="BodySlideDll.h">
+      <Filter>XMH\Interop</Filter>
+    </ClInclude>
+    <ClInclude Include="CBodySlidePropertiesInclude.h">
+      <Filter>XMH\Interop</Filter>
+    </ClInclude>
+    <ClInclude Include="DataConversion.h">
+      <Filter>XMH\Interop</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1923,11 +1935,17 @@
     <ClCompile Include="lib\nifly\src\Skin.cpp">
       <Filter>Libraries\nifly\src</Filter>
     </ClCompile>
-    <ClCompile Include="BodySlideDll.cpp">
-      <Filter>XMH</Filter>
-    </ClCompile>
     <ClCompile Include="BSDllController.cpp">
       <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="BSPropertiesReader.cpp">
+      <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="BodySlideDll.cpp">
+      <Filter>XMH\Interop</Filter>
+    </ClCompile>
+    <ClCompile Include="DataConversion.cpp">
+      <Filter>XMH\Interop</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

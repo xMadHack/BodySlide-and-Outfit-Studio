@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../../BodySlideDll.h"
 #include "../../BSDllCOntroller.h"
+using namespace xmadhack_c;
 
 #include <wx/debugrpt.h>
 #include <regex>

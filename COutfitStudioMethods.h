@@ -6,5 +6,5 @@ public enum class OutfitStudioMethods
 enum class COutfitStudioMethods : int
 #endif
 {
-	Unknown = 0, TestMethod = 999 /*Doesn't read form the app and always returns something*/
+	Unknown = 0, OpenProject=1, TestMethod = 999 /*Doesn't read form the app and always returns something*/
 };

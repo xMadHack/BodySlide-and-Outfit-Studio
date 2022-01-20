@@ -329,6 +329,7 @@ OutfitStudio::~OutfitStudio() {
 
 OutfitStudio::OutfitStudio()
 {
+	xmadhack_c::OSDllController::outfit_studio_app_instance = this;
 	SetExitOnFrameDelete(true);
 }
 
@@ -466,7 +467,7 @@ bool OutfitStudio::OnInit() {
 	Bind(wxEVT_CHAR_HOOK, &OutfitStudio::CharHook, this);
 
 	wxLogMessage("Outfit Studio initialized.");
-	OSDllController::raise_event(OSMethods::OUTFIT_STUDIO_OPENED);
+	OSDllController::raise_event(xmadhack_c::COutfitStudioEvents::OutfitStudioOpened);
 	return true;
 }
 
@@ -933,7 +934,7 @@ void OutfitStudio::GetArchiveFiles(std::vector<std::string>& outList) {
 
 OutfitStudioFrame::OutfitStudioFrame(const wxPoint& pos, const wxSize& size) {
 	wxLogMessage("Loading Outfit Studio frame at X:%d Y:%d with W:%d H:%d...", pos.x, pos.y, size.GetWidth(), size.GetHeight());
-
+	xmadhack_c::OSDllController::outfit_studio_frame_instance = this;
 	wxXmlResource* xrc = wxXmlResource::Get();
 	if (!xrc->Load(wxString::FromUTF8(Config["AppDir"]) + "/res/xrc/OutfitStudio.xrc")) {
 		wxMessageBox(_("Failed to load OutfitStudio.xrc file!"), _("Error"), wxICON_ERROR);

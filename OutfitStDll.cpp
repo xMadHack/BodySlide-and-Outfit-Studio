@@ -19,7 +19,6 @@
 
 
 
-
 using namespace xmadhack_c;
 
 // ----------------------------------------------------------------------------
@@ -178,6 +177,31 @@ extern "C"
 	{
 		 OSDllController::perform(method);
 	}
+
+
+	 std::string MBFromW(LPCWSTR pwsz, UINT cp) {
+		 int cch = WideCharToMultiByte(cp, 0, pwsz, -1, 0, 0, NULL, NULL);
+
+		 char* psz = new char[cch];
+
+		 WideCharToMultiByte(cp, 0, pwsz, -1, psz, cch, NULL, NULL);
+
+		 std::string st(psz);
+		 delete[] psz;
+
+		 return st;
+	 }
+
+	 std::string convertToStdString(LPCTSTR str) {
+		 return MBFromW(str, CP_ACP);
+	 }
+
+	
+
+	 void os_perform_str(xmadhack_c::COutfitStudioMethods method, LPCTSTR arg)
+	 {
+		  OSDllController::perform(method, convertToStdString(arg));
+	 }
 
 	bool is_outfit_studio_running() {
 		return (gs_wxMainThread != NULL);

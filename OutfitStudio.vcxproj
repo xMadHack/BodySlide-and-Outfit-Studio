@@ -404,6 +404,8 @@
     <None Include="res\xrc\Slider.xrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="COutfitStudioEvents.h" />
+    <ClInclude Include="COutfitStudioEventsInclude.h" />
     <ClInclude Include="COutfitStudioMethods.h" />
     <ClInclude Include="COutfitStudioMethodsInclude.h" />
     <ClInclude Include="lib\DDS.h" />

@@ -1,17 +1,16 @@
 #pragma once
 
+#include <Windows.h>
 
 
-enum class OSMethods {
-    NONE = 0, OUTFIT_STUDIO_OPENED = 1
-
-};
 
 namespace xmadhack_c {
     enum class COutfitStudioMethods;
+    enum class COutfitStudioEvents;
+
 }
 
-typedef void(__stdcall* outfit_studio_callback)(OSMethods);
+typedef void(__stdcall* outfit_studio_callback)(xmadhack_c::COutfitStudioEvents);
 
 
 #ifdef __cplusplus
@@ -35,8 +34,8 @@ extern "C" {
     //MY_DLL_DECL int TakesCallback(ANSWERCB fp, int n, int m);
     MY_DLL_DECL void set_outfit_studio_event_handler(outfit_studio_callback act);
 
-    MY_DLL_DECL void os_perform(xmadhack_c::COutfitStudioMethods method);
-
+    MY_DLL_DECL void os_perform(xmadhack_c::COutfitStudioMethods method); 
+    MY_DLL_DECL void os_perform_str(xmadhack_c::COutfitStudioMethods method, LPCTSTR arg);
 #ifdef __cplusplus
 }
 #endif

@@ -37,6 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace nifly;
 DECLARE_APP(OutfitStudio); //Implements the wxGetApp() frame method.
 
+
+using namespace xmadhack_c;
 // ----------------------------------------------------------------------------
 // event tables and other macros for wxWidgets
 // ----------------------------------------------------------------------------

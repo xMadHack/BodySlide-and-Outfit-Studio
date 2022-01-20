@@ -14,9 +14,6 @@ namespace xmadhack_c {
     enum class CBodySlideProperties;
 }
 
-//typedef void(__stdcall* read_int_property_function)(int);
-//typedef void(__stdcall* read_string_property_function)(LPCTSTR str);
-//typedef void(__stdcall* read_string_array_property_function)(std::vector<std::string>);
 
 #ifdef __cplusplus
 extern "C" {

@@ -7,6 +7,10 @@ enum class OSMethods {
 
 };
 
+namespace xmadhack_c {
+    enum class COutfitStudioMethods;
+}
+
 typedef void(__stdcall* outfit_studio_callback)(OSMethods);
 
 
@@ -31,6 +35,7 @@ extern "C" {
     //MY_DLL_DECL int TakesCallback(ANSWERCB fp, int n, int m);
     MY_DLL_DECL void set_outfit_studio_event_handler(outfit_studio_callback act);
 
+    MY_DLL_DECL void os_perform(xmadhack_c::COutfitStudioMethods method);
 
 #ifdef __cplusplus
 }

@@ -71,6 +71,9 @@
     <Filter Include="XMH">
       <UniqueIdentifier>{32c38a98-1c83-45a1-8661-896ee1895232}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XMH\Interop">
+      <UniqueIdentifier>{5edf2583-6237-4e98-a9b3-d7852cd11072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="OutfitStudio.ico">
@@ -1753,11 +1756,17 @@
     <ClInclude Include="src\ui\wxBrushSettingsPopup.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="OutfitStDll.h">
-      <Filter>XMH</Filter>
-    </ClInclude>
     <ClInclude Include="OSDllController.h">
       <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="OutfitStDll.h">
+      <Filter>XMH\Interop</Filter>
+    </ClInclude>
+    <ClInclude Include="COutfitStudioMethods.h">
+      <Filter>XMH</Filter>
+    </ClInclude>
+    <ClInclude Include="COutfitStudioMethodsInclude.h">
+      <Filter>XMH\Interop</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1962,11 +1971,11 @@
     <ClCompile Include="src\ui\wxBrushSettingsPopup.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="OutfitStDll.cpp">
-      <Filter>XMH</Filter>
-    </ClCompile>
     <ClCompile Include="OSDllController.cpp">
       <Filter>XMH</Filter>
+    </ClCompile>
+    <ClCompile Include="OutfitStDll.cpp">
+      <Filter>XMH\Interop</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

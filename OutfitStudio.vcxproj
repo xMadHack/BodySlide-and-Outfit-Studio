@@ -404,6 +404,8 @@
     <None Include="res\xrc\Slider.xrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="COutfitStudioMethods.h" />
+    <ClInclude Include="COutfitStudioMethodsInclude.h" />
     <ClInclude Include="lib\DDS.h" />
     <ClInclude Include="lib\FSEngine\FSBSA.h" />
     <ClInclude Include="lib\FSEngine\FSEngine.h" />

@@ -20,6 +20,7 @@
 
 
 
+using namespace xmadhack_c;
 
 // ----------------------------------------------------------------------------
 // application startup
@@ -171,6 +172,11 @@ extern "C"
 	void set_outfit_studio_event_handler(outfit_studio_callback act)
 	{
 		OSDllController::set_event_handler(act);
+	}
+
+	 void os_perform(xmadhack_c::COutfitStudioMethods method)
+	{
+		 OSDllController::perform(method);
 	}
 
 	bool is_outfit_studio_running() {

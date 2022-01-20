@@ -1738,9 +1738,6 @@
     <ClInclude Include="CBodySlideProperties.h">
       <Filter>XMH</Filter>
     </ClInclude>
-    <ClInclude Include="BSPropertiesReader.h">
-      <Filter>XMH</Filter>
-    </ClInclude>
     <ClInclude Include="BodySlideDll.h">
       <Filter>XMH\Interop</Filter>
     </ClInclude>
@@ -1936,9 +1933,6 @@
       <Filter>Libraries\nifly\src</Filter>
     </ClCompile>
     <ClCompile Include="BSDllController.cpp">
-      <Filter>XMH</Filter>
-    </ClCompile>
-    <ClCompile Include="BSPropertiesReader.cpp">
       <Filter>XMH</Filter>
     </ClCompile>
     <ClCompile Include="BodySlideDll.cpp">

@@ -403,7 +403,6 @@
     <None Include="res\xrc\Slider.xrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BSPropertiesReader.h" />
     <ClInclude Include="CBodySlidePropertiesInclude.h" />
     <ClInclude Include="BSDllController.h" />
     <ClInclude Include="BodySlideDll.h" />
@@ -772,7 +771,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BSDllController.cpp" />
-    <ClCompile Include="BSPropertiesReader.cpp" />
     <ClCompile Include="DataConversion.cpp" />
     <ClCompile Include="lib\FSEngine\FSBSA.cpp" />
     <ClCompile Include="lib\FSEngine\FSEngine.cpp" />
